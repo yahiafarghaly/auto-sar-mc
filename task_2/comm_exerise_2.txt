@@ -1,0 +1,20 @@
+Assuming the CAN SDU == a single PDU Size. (No TP approach)
+
+Transmit 
+===============
+Com->
+	1. PduR_ComTransmit(length, PDU_pdata)
+	2. CanIf_Transmit(length, PDU_pdata)
+	3. Can_Write()
+	4. Com_TxConfirmation()
+	
+	
+Recv
+=====
+Com->
+	3.RxIndication(length, PDU_pdata)
+	2.PduR_<>RxIndication()
+	1.CanIf_RxIndication() [Interrupt Mode]
+	0. ReceiveInterrupt
+	
+		

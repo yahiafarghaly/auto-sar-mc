@@ -1,0 +1,14 @@
+ComM, CanSM, CanIf, Can, Can Trcv
+
+*** Assuming All modules Init is called at it layer. such as CanIf_Init in the Communication_HW_Abstraction  ***
+
+->CanTrcv
+1. CanSM_RequestComMode(COMM_FULL_COMMUNICATION)
+	2. CanIf_SetTrcvMode(CANIF_TRCV_MODE_NORMAL)
+		3.CanTrcv_SetOpMode(CANIF_TRCV_MODE_NORMAL
+			4.DIO .. ?
+
+
+->Can Controller
+1.CanSM_RequestComMode(COMM_FULL_COMMUNICATION)
+	2.CanIf_SetControllerMode(CAN_CS_STARTED)
